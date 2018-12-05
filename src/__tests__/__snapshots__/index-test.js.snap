@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should convert root aliases (relative to the config) properly 1`] = `"const something = require(\\"./\\");"`;
+
+exports[`Should fallback to default configs it custom config not found 1`] = `"const something = require(\\"./src/index.js\\");"`;
+
+exports[`Should handle webpack config using multi-compiler 1`] = `
+"const one = require(\\"mobile\\");
+
+const two = require(\\"desktop\\");"
+`;
+
+exports[`Should make non absolute aliases absolute 1`] = `"const something = require(\\"./nonAbsolute\\");"`;
+
+exports[`Should not transform if not requireing a string literal 1`] = `
+"const number = 1;
+
+const something = require(number);"
+`;
+
+exports[`Should not transform non require statements 1`] = `
+"var a = 'a';
+
+function callMe(a) {}
+
+callMe(a);"
+`;
+
+exports[`Should perform a simple transform 1`] = `"const something = require(\\"./src/index.js\\");"`;
+
+exports[`Should return string literal destination when alias is a module 1`] = `"const something = require(\\"src/\\");"`;
+
+exports[`Should transform when webpack config has a dependency 1`] = `
+"const one = require(\\"./src/__tests__/__configs__/src/index.js\\");
+
+const two = require(\\"./src/__tests__/__configs__/moreSrc/index.js\\");"
+`;
