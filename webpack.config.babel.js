@@ -1,4 +1,4 @@
-// used for tests
+// here just for tests to find
 
 import path from 'path';
 

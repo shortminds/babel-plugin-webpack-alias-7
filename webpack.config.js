@@ -1,4 +1,4 @@
-// used for tests
+// here just for tests to find
 
 var path = require('path');
 
