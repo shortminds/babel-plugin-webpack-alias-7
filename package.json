@@ -4,9 +4,9 @@
     "description": "Babel 7 plugin for webpack aliases",
     "main": "src/index.js",
     "scripts": {
+        "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
         "lint": "eslint --ignore-pattern '*.js.snap' --ext .js ./src/",
-        "test": "jest",
-        "test-coverage": "jest --coverage"
+        "test": "jest"
     },
     "keywords": [
         "babel",
@@ -36,6 +36,7 @@
         "@babel/register": "^7.0.0",
         "babel-core": "^7.0.0-bridge.0",
         "babel-jest": "^23.6.0",
+        "coveralls": "^3.0.2",
         "eslint": "^5.9.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-plugin-import": "^2.14.0",
