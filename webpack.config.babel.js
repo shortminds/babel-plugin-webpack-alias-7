@@ -6,7 +6,7 @@ export default {
     resolve: {
         extensions: ['.js'],
         alias: {
-            'libs': path.join(__dirname, 'src')
+            libs: path.join(__dirname, 'src')
         }
     }
 };

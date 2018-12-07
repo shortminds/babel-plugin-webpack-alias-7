@@ -4,7 +4,7 @@ module.exports = [{
     resolve: {
         extensions: ['.js'],
         alias: {
-            'mobileLibs': 'mobile'
+            mobileLibs: 'mobile'
         }
     }
 }, {
@@ -13,7 +13,7 @@ module.exports = [{
     resolve: {
         extensions: ['.js'],
         alias: {
-            'desktopLibs': 'desktop'
+            desktopLibs: 'desktop'
         }
     }
 }, {

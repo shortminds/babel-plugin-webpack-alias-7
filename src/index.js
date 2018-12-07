@@ -1,6 +1,12 @@
 import { declare } from '@babel/helper-plugin-utils';
 import { types as t } from '@babel/core';
-import { join, resolve, relative, isAbsolute, dirname, basename, sep } from 'path';
+import {
+    join,
+    resolve,
+    relative,
+    isAbsolute,
+    dirname
+} from 'path';
 import fs from 'fs';
 import isEmpty from 'lodash.isempty';
 
@@ -19,7 +25,7 @@ const fileExists = (path) => {
     } catch (e) {
         return false;
     }
-}
+};
 
 const getConfigPath = (configPaths) => {
     let conf = null;
@@ -28,7 +34,7 @@ const getConfigPath = (configPaths) => {
     configPaths.some(configPath => {
         const resolvedConfigPath = resolve(process.cwd(), configPath);
 
-        if(resolvedConfigPath && fileExists(resolvedConfigPath)) {
+        if (resolvedConfigPath && fileExists(resolvedConfigPath)) {
             conf = resolvedConfigPath;
         }
 
@@ -36,7 +42,7 @@ const getConfigPath = (configPaths) => {
     });
 
     return conf;
-}
+};
 
 export default declare(api => {
     api.assertVersion(7);
@@ -64,7 +70,7 @@ export default declare(api => {
             );
 
             // If the config comes back as null, we didn't find it, so throw an exception.
-            if(!configPath) {
+            if (!configPath) {
                 throw new Error(`Cannot find any of these configuration files: ${configPaths.join(', ')}`);
             }
 
@@ -96,7 +102,7 @@ export default declare(api => {
                 const { filename = '' } = state;
 
                 // Prevent @babel/register from running babel to run on the webpack config
-                if(filename === resolve(configPath)) {
+                if (filename === resolve(configPath)) {
                     return;
                 }
 
@@ -122,31 +128,31 @@ export default declare(api => {
                         const notModuleRegExp = /^\.$|^\.[\\\/]|^\.\.$|^\.\.[\/\\]|^\/|^[A-Z]:[\\\/]/i;
                         const isModule = !notModuleRegExp.test(aliasDestination);
 
-                        if(isModule) {
+                        if (isModule) {
                             path.node.arguments = [t.StringLiteral(aliasDestination)];
                             return;
                         }
 
                         // If the filepath is not absolute, make it absolute
-                        if(!isAbsolute(aliasDestination)) {
+                        if (!isAbsolute(aliasDestination)) {
                             aliasDestination = join(process.cwd(), aliasDestination);
                         }
                         let relativeFilePath = relative(dirname(filename), aliasDestination);
 
                         // In case the file path is the root of the alias, need to put a dot to avoid having an absolute path
-                        if(relativeFilePath.length === 0) {
+                        if (relativeFilePath.length === 0) {
                             relativeFilePath = '.';
                         }
 
                         let requiredFilePath = filePath.replace(alias, relativeFilePath);
 
                         // If the file is requiring the current directory which is the alias, add an extra slash
-                        if(requiredFilePath === '.') {
+                        if (requiredFilePath === '.') {
                             requiredFilePath = './';
                         }
 
                         // In the case of a file requiring a child directory of the current directory, we need to add a dot slash
-                        if (['.','/'].indexOf(requiredFilePath[0]) === -1) {
+                        if (['.', '/'].indexOf(requiredFilePath[0]) === -1) {
                             requiredFilePath = `./${requiredFilePath}`;
                         }
 
@@ -159,4 +165,4 @@ export default declare(api => {
             }
         }
     };
-})
+});

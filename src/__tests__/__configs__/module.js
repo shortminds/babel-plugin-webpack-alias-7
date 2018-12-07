@@ -3,7 +3,7 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            'libs': 'src/'
+            libs: 'src/'
         }
     }
 };

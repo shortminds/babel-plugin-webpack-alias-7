@@ -4,6 +4,7 @@
     "description": "Babel 7 plugin for webpack aliases",
     "main": "src/index.js",
     "scripts": {
+        "lint": "eslint --ignore-pattern '*.js.snap' --ext .js ./src/",
         "test": "jest",
         "test-coverage": "jest --coverage"
     },
@@ -36,6 +37,8 @@
         "babel-core": "^7.0.0-bridge.0",
         "babel-jest": "^23.6.0",
         "eslint": "^5.9.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-plugin-import": "^2.14.0",
         "jest": "^23.6.0",
         "webpack-merge": "^4.1.4"
     },
