@@ -13,9 +13,10 @@ it('Should fallback to default configs it custom config not found', () => {
         simpleTransform,
         {
             plugins: [
-                [ aliasPlugin, { config: 'src/__tests__/__configs__/doesNotExist.js' } ]
+                [aliasPlugin, { config: 'src/__tests__/__configs__/doesNotExist.js' }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -28,9 +29,10 @@ it('Should transform when webpack config has a dependency', () => {
         configWithDependency,
         {
             plugins: [
-                [ aliasPlugin, { config: 'src/__tests__/__configs__/configWithDependency.js' } ]
+                [aliasPlugin, { config: 'src/__tests__/__configs__/configWithDependency.js' }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -43,9 +45,10 @@ it('Should handle webpack config using multi-compiler', () => {
         multiCompiler,
         {
             plugins: [
-                [ aliasPlugin, { config: 'src/__tests__/__configs__/multiCompiler.js' } ]
+                [aliasPlugin, { config: 'src/__tests__/__configs__/multiCompiler.js' }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -55,9 +58,10 @@ it('Should throw an error if webpack config does not contain a resolve object', 
             simpleTransform,
             {
                 plugins: [
-                    [ aliasPlugin, { config: 'src/__tests__/__configs__/noResolve.js' } ]
+                    [aliasPlugin, { config: 'src/__tests__/__configs__/noResolve.js' }]
                 ]
-            });
+            }
+        );
     } catch (error) {
         expect(error.message)
             .toEqual('The webpack config file does not contain an alias configuration');
@@ -70,9 +74,10 @@ it('Should throw an error if webpack config does not contain an alias object', (
             simpleTransform,
             {
                 plugins: [
-                    [ aliasPlugin, { config: 'src/__tests__/__configs__/noAlias.js' } ]
+                    [aliasPlugin, { config: 'src/__tests__/__configs__/noAlias.js' }]
                 ]
-            });
+            }
+        );
     } catch (error) {
         expect(error.message)
             .toEqual('The webpack config file does not contain an alias configuration');
@@ -90,8 +95,9 @@ it('Should not transform non require statements', () => {
     const { code } = babel.transform(
         noRequireHere,
         {
-            plugins: [ aliasPlugin ]
-        });
+            plugins: [aliasPlugin]
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -103,8 +109,9 @@ it('Should not transform if not requireing a string literal', () => {
     const { code } = babel.transform(
         noStringLiteral,
         {
-            plugins: [ aliasPlugin ]
-        });
+            plugins: [aliasPlugin]
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -116,9 +123,10 @@ it('Should return string literal destination when alias is a module', () => {
         module,
         {
             plugins: [
-                [ aliasPlugin, { config: 'src/__tests__/__configs__/module.js' } ]
+                [aliasPlugin, { config: 'src/__tests__/__configs__/module.js' }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -130,9 +138,10 @@ it('Should make non absolute aliases absolute', () => {
         notAbsolute,
         {
             plugins: [
-                [ aliasPlugin, { config: 'src/__tests__/__configs__/nonAbsolute.js' } ]
+                [aliasPlugin, { config: 'src/__tests__/__configs__/nonAbsolute.js' }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -144,9 +153,10 @@ it('Should convert root aliases (relative to the config) properly', () => {
         root,
         {
             plugins: [
-                [ aliasPlugin, { config: 'src/__tests__/__configs__/root.js' } ]
+                [aliasPlugin, { config: 'src/__tests__/__configs__/root.js' }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
 
@@ -157,8 +167,9 @@ it('Should perform a simple transform', () => {
         simpleTransform,
         {
             plugins: [
-                [ aliasPlugin, { /* no config options */ } ]
+                [aliasPlugin, { /* no config options */ }]
             ]
-        });
+        }
+    );
     expect(code).toMatchSnapshot();
 });
