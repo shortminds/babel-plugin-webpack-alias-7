@@ -6,6 +6,9 @@
 
 > This Babel 7 plugin allows you to use webpack resolve aliases from webpack configs in Babel. Many thanks to the [Babel 6 version](https://github.com/trayio/babel-plugin-webpack-alias) that this plugin borrows a lot from.
 
+[![Build Status](https://travis-ci.com/shortminds/babel-plugin-webpack-alias.svg?branch=master)](https://travis-ci.com/shortminds/babel-plugin-webpack-alias)
+[![Coverage Status](https://coveralls.io/repos/github/shortminds/babel-plugin-webpack-alias/badge.svg?branch=master)](https://coveralls.io/github/shortminds/babel-plugin-webpack-alias?branch=master)
+
 This plugin is simply going to take the aliases defined in your webpack config and replace require paths. It is especially useful when you rely on webpack aliases to keep require paths nicer (and sometimes more consistent depending on your project configuration) but you can't use webpack in a context, for example for unit testing.
 
 ## Example
