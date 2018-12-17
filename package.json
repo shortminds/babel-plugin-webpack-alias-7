@@ -2,8 +2,10 @@
     "name": "@babel/plugin-webpack-alias",
     "version": "0.1.0",
     "description": "Babel 7 plugin for webpack aliases",
-    "main": "src/index.js",
+    "repository": "https://github.com/shortminds/babel-plugin-webpack-alias",
+    "main": "lib/index.js",
     "scripts": {
+        "build": "babel src/index.js -d lib",
         "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
         "lint": "eslint --ignore-pattern '*.js.snap' --ext .js ./src/",
         "test": "jest"
@@ -40,6 +42,8 @@
         "eslint": "^5.9.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.2",
+        "eslint-plugin-react": "^7.11.1",
         "jest": "^23.6.0",
         "webpack-merge": "^4.1.4"
     },

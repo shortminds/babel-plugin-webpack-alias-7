@@ -1,0 +1,21 @@
+{
+  "name": "@babel/plugin-webpack-alias-example-mocha",
+  "version": "0.0.0",
+  "description": "Example using @babel/plugin-webpack-alias with mocha",
+  "repository": "",
+  "scripts": {
+    "test": "mocha --require @babel/register"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-webpack-alias": "file:../..",
+    "@babel/register": "^7.0.0"
+  }
+}
