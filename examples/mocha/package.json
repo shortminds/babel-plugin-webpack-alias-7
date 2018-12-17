@@ -14,14 +14,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-export-default-from": "^7.2.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/plugin-transform-destructuring": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/plugin-transform-parameters": "^7.2.0",
-    "@babel/plugin-transform-spread": "^7.2.0",
-    "@babel/plugin-transform-strict-mode": "^7.2.0",
     "@babel/plugin-webpack-alias": "file:../..",
     "@babel/register": "^7.0.0"
   }
