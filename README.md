@@ -1,8 +1,8 @@
 > ## 🛠 Status: In Development
-> This plugin is currently in development and not even available on npm.  Seeking feedback and/or help.
+> This plugin is currently in development and not even available on npm.
 
 
-# @babel/plugin-webpack-alias
+# babel-plugin-webpack-alias-7
 
 > This Babel 7 plugin allows you to use webpack resolve aliases from webpack configs in Babel. Many thanks to the [Babel 6 version](https://github.com/trayio/babel-plugin-webpack-alias) that this plugin borrows a lot from.
 
@@ -61,7 +61,7 @@ Add the plugin to your `.babelrc`.  Optionally, add a path to a webpack config f
         "env": {
             "test": {
                 "plugins": [
-                    [ "@babel/plugin-webpack-alias", { "config": "./configs/webpack.config.test.js" } ]
+                    [ "babel-plugin-webpack-alias-7", { "config": "./configs/webpack.config.test.js" } ]
                 ]
             }
         }

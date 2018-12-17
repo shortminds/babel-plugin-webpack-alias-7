@@ -1,8 +1,8 @@
 {
-    "name": "@babel/plugin-webpack-alias",
+    "name": "babel-plugin-webpack-alias-7",
     "version": "0.1.0",
     "description": "Babel 7 plugin for webpack aliases",
-    "repository": "https://github.com/shortminds/babel-plugin-webpack-alias",
+    "repository": "https://github.com/shortminds/babel-plugin-webpack-alias-7",
     "main": "lib/index.js",
     "scripts": {
         "build": "babel src/index.js -d lib",

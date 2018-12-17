@@ -1,6 +1,6 @@
 {
     "plugins": [
         "@babel/plugin-transform-modules-commonjs",
-        "@babel/plugin-webpack-alias"
+        "babel-plugin-webpack-alias-7"
     ]
 }

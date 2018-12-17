@@ -1,7 +1,7 @@
 {
-  "name": "@babel/plugin-webpack-alias-example-mocha",
+  "name": "babel-plugin-webpack-alias-7-example-mocha",
   "version": "0.0.0",
-  "description": "Example using @babel/plugin-webpack-alias with mocha",
+  "description": "Example using babel-plugin-webpack-alias-7 with mocha",
   "repository": "",
   "scripts": {
     "test": "mocha --require @babel/register"
@@ -15,7 +15,7 @@
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/plugin-webpack-alias": "file:../..",
+    "babel-plugin-webpack-alias-7": "file:../..",
     "@babel/register": "^7.0.0"
   }
 }
