@@ -1,5 +1,5 @@
 > ## 🛠 Status: In Development
-> This plugin is currently in development and not even available on npm.  Seeking feedback and/or help.
+> This plugin is currently in development and not even available on npm.
 
 
 # babel-plugin-webpack-alias-7
