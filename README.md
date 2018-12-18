@@ -1,6 +1,5 @@
 > ## 🛠 Status: In Development
-> This plugin is currently in development and not even available on npm.
-
+> This plugin is currently in development.  Seeking feedback on features removed.
 
 # babel-plugin-webpack-alias-7
 
@@ -8,6 +7,7 @@
 
 [![Build Status](https://travis-ci.com/shortminds/babel-plugin-webpack-alias.svg?branch=master)](https://travis-ci.com/shortminds/babel-plugin-webpack-alias)
 [![Coverage Status](https://coveralls.io/repos/github/shortminds/babel-plugin-webpack-alias/badge.svg?branch=master)](https://coveralls.io/github/shortminds/babel-plugin-webpack-alias?branch=master)
+[![npm version](https://badge.fury.io/js/babel-plugin-webpack-alias-7.svg)](https://badge.fury.io/js/babel-plugin-webpack-alias-7)
 
 This plugin is simply going to take the aliases defined in your webpack config and replace require paths. It is especially useful when you rely on webpack aliases to keep require paths nicer (and sometimes more consistent depending on your project configuration) but you can't use webpack in a context, for example for unit testing.
 
@@ -41,7 +41,7 @@ Transpiles to:
 
 ## Installation
 ```console
-    # nothing yet
+    $ npm install --save-dev babel-plugin-webpack-alias-7
 ```
 
 Add the plugin to your `.babelrc`.  Optionally, add a path to a webpack config file, otherwise the plugin will look for `webpack.config.js` or `webpack.config.babel.js` in the root where the build was run.  Setting the config option will transform all alias destinations to be relative to the custom config.
@@ -67,7 +67,7 @@ Add the plugin to your `.babelrc`.  Optionally, add a path to a webpack config f
         }
     }
 ```
-In this case, the plugin will only be run when `NODE_ENV` is set to `test`.
+In this example, the plugin will only be run when `NODE_ENV` is set to `test`.
 
 ## Changes from the Babel 6 version
 

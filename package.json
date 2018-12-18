@@ -1,6 +1,6 @@
 {
     "name": "babel-plugin-webpack-alias-7",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Babel 7 plugin for webpack aliases",
     "repository": "https://github.com/shortminds/babel-plugin-webpack-alias-7",
     "main": "lib/index.js",
@@ -8,6 +8,7 @@
         "build": "babel src/index.js -d lib",
         "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
         "lint": "eslint --ignore-pattern '*.js.snap' --ext .js ./src/",
+        "prepublish": "npm run lint && npm test && npm run build",
         "test": "jest"
     },
     "keywords": [
@@ -17,6 +18,9 @@
     ],
     "author": "Nathan Friemel",
     "license": "MIT",
+    "files": [
+        "lib/index.js"
+    ],
     "dependencies": {
         "@babel/helper-plugin-utils": "^7.0.0",
         "lodash.isempty": "^4.4.0"
