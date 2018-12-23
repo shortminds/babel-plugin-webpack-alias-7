@@ -69,6 +69,10 @@ Add the plugin to your `.babelrc`.  Optionally, add a path to a webpack config f
 ```
 In this example, the plugin will only be run when `NODE_ENV` is set to `test`.
 
+## Notes
+
+- If using this plugin with [require-extension-hooks](https://github.com/jackmellis/require-extension-hooks) you'll need to add your webpack file to _hooks'_ [excludePattern](https://github.com/jackmellis/require-extension-hooks#excludepattern--fn) - otherwise the webpack config will always be required as empty. 
+
 ## Changes from the Babel 6 version
 
 - `config` option no longer uses lodash templates
