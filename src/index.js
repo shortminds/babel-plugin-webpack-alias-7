@@ -91,7 +91,7 @@ export default declare(api => {
 
             // Exit if there's no alias config
             if (isEmpty(aliasConfig)) {
-                throw new Error('The webpack config file does not contain an alias configuration');
+                throw new Error(`The webpack config file at — ${configPath} — does not contain an alias configuration`);
             }
 
             aliases = Object.keys(aliasConfig);
