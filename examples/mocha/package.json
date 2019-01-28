@@ -12,10 +12,10 @@
     "mocha": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "babel-plugin-webpack-alias-7": "file:../..",
-    "@babel/register": "^7.0.0"
+    "@babel/register": "^7.0.0",
+    "babel-plugin-webpack-alias-7": "file:../.."
   }
 }
