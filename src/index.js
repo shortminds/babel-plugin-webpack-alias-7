@@ -79,7 +79,7 @@ export default declare(api => {
 
             if (Array.isArray(webpackConfig)) { // Uses webpacks multi-compiler option
                 aliasConfig = webpackConfig.reduce((previous, current) => {
-                    const next = Object.assign({}, previous);
+                    const next = { ...previous };
                     if (current.resolve && current.resolve.alias) {
                         Object.assign(next, current.resolve.alias);
                     }
