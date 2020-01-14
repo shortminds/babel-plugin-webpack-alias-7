@@ -28,6 +28,8 @@ callMe(a);"
 
 exports[`Should perform a simple transform 1`] = `"const something = require(\\"./src/index.js\\");"`;
 
+exports[`Should resolve lodash templated config paths 1`] = `"const something = require(\\"./src/__tests__/__configs__/src/index.js\\");"`;
+
 exports[`Should return string literal destination when alias is a module 1`] = `"const something = require(\\"src/\\");"`;
 
 exports[`Should transform when webpack config has a dependency 1`] = `

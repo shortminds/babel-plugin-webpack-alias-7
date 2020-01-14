@@ -84,6 +84,20 @@ it('Should throw an error if webpack config does not contain an alias object', (
     }
 });
 
+it('Should resolve lodash templated config paths', () => {
+    process.env.TESTS = '__tests__';
+    const { code } = babel.transform(
+        simpleTransform,
+        {
+            plugins: [
+                // eslint-disable-next-line no-template-curly-in-string
+                [aliasPlugin, { config: 'src/${TESTS}/__configs__/configWithDependency.js' }]
+            ]
+        }
+    );
+    expect(code).toMatchSnapshot();
+});
+
 // Visitor edge cases
 
 it('Should not transform non require statements', () => {
