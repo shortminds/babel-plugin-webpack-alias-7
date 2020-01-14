@@ -87,6 +87,9 @@ export default declare(api => {
                     }
                     return next;
                 }, {});
+            } else if (typeof webpackConfig == 'function') {
+                webpackConfig = webpackConfig();
+                aliasConfig = webpackConfig.resolve.alias;
             } else if (!isEmpty(webpackConfig.resolve)) {
                 aliasConfig = webpackConfig.resolve.alias;
             }
