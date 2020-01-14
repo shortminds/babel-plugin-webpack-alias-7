@@ -9,6 +9,7 @@ import {
 } from 'path';
 import fs from 'fs';
 import isEmpty from 'lodash.isempty';
+import template from 'lodash.template';
 
 const PLUGIN_KEY = 'webpack alias';
 const REQUIRE = 'require';
@@ -32,7 +33,8 @@ const getConfigPath = (configPaths) => {
 
     // Try all config paths and return for the first found one
     configPaths.some(configPath => {
-        const resolvedConfigPath = resolve(process.cwd(), configPath);
+        const pathRenderer = template(configPath);
+        const resolvedConfigPath = resolve(process.cwd(), pathRenderer(process.env));
 
         if (resolvedConfigPath && fileExists(resolvedConfigPath)) {
             conf = resolvedConfigPath;
