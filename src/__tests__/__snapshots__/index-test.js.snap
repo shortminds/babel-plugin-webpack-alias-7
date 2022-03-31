@@ -2,7 +2,9 @@
 
 exports[`Should convert root aliases (relative to the config) properly 1`] = `"const something = require(\\"./\\");"`;
 
-exports[`Should fallback to default configs it custom config not found 1`] = `"const something = require(\\"./src/index.js\\");"`;
+exports[`Should fallback to default configs if custom config not found 1`] = `"const something = require(\\"./src/index.js\\");"`;
+
+exports[`Should handle webpack config as an Object 1`] = `"const something = require(\\"../libsDir/index.js\\");"`;
 
 exports[`Should handle webpack config using multi-compiler 1`] = `
 "const one = require(\\"mobile\\");
