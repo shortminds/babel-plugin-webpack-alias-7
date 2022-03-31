@@ -64,18 +64,23 @@ export default declare(api => {
             } = plugin;
             const configPaths = config ? [config, ...DEFAULT_CONFIG_NAMES] : DEFAULT_CONFIG_NAMES;
 
-            // Get webpack config
-            configPath = getConfigPath(
-                configPaths
-            );
+            if (typeof config === 'object') {
+                configPath = null;
+                webpackConfig = config;
+            } else {
+                // Get webpack config
+                configPath = getConfigPath(
+                    configPaths
+                );
 
-            // If the config comes back as null, we didn't find it, so throw an exception.
-            if (!configPath) {
-                throw new Error(`Cannot find any of these configuration files: ${configPaths.join(', ')}`);
+                // If the config comes back as null, we didn't find it, so throw an exception.
+                if (!configPath) {
+                    throw new Error(`Cannot find any of these configuration files: ${configPaths.join(', ')}`);
+                }
+
+                // Require the config
+                webpackConfig = require(configPath);
             }
-
-            // Require the config
-            webpackConfig = require(configPath);
 
             if (Array.isArray(webpackConfig)) { // Uses webpacks multi-compiler option
                 aliasConfig = webpackConfig.reduce((previous, current) => {
@@ -102,7 +107,7 @@ export default declare(api => {
                 const { filename = '' } = state;
 
                 // Prevent @babel/register from running babel to run on the webpack config
-                if (filename === resolve(configPath)) {
+                if (configPath && filename === resolve(configPath)) {
                     return;
                 }
 

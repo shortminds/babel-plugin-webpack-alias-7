@@ -8,7 +8,7 @@ const simpleTransform = `
 
 // Config options and error tests
 
-it('Should fallback to default configs it custom config not found', () => {
+it('Should fallback to default configs if custom config not found', () => {
     const { code } = babel.transform(
         simpleTransform,
         {
@@ -46,6 +46,18 @@ it('Should handle webpack config using multi-compiler', () => {
         {
             plugins: [
                 [aliasPlugin, { config: 'src/__tests__/__configs__/multiCompiler.js' }]
+            ]
+        }
+    );
+    expect(code).toMatchSnapshot();
+});
+
+it('Should handle webpack config as an Object', () => {
+    const { code } = babel.transform(
+        simpleTransform,
+        {
+            plugins: [
+                [aliasPlugin, { config: { resolve: { alias: { libs: '../libsDir' } } } }]
             ]
         }
     );
